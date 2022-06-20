@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "import", "react-hooks", "@typescript-eslint"],
+  "rules": {
+    // ...
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prefer-const": "error"
+    // "@typescript-eslint/no-unused-vars": "error",
+    // "@typescript-eslint/no-explicit-any": "error"
+  },
+  "globals": {
+    "React": "writable"
+  }
 }
