@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import GithubProvider from '../providers/github-provider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,8 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-
-      <Component {...pageProps} />
+      <GithubProvider>
+        <Component {...pageProps} />
+      </GithubProvider>
     </>
   )
 }
