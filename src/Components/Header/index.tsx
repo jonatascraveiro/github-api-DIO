@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, useState } from 'react'
+import React, { BaseSyntheticEvent, useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import useGithub from '../../hooks/github-hooks'
 
@@ -12,6 +12,9 @@ const Header: React.FC = () => {
     e.preventDefault()
     getUsuario(nomeUsuario)
   }
+  useEffect(() => {
+    getUsuario(nomeUsuario)
+  }, [])
 
   return (
     <Container>
