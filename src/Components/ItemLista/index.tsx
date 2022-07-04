@@ -1,18 +1,30 @@
 import React from 'react'
 import { Button, Card, Col } from 'react-bootstrap'
+import { FavoritosGithubType } from '../../types/favoritos'
+import { RepositoriosGithubType } from '../../types/repositorios'
 
-const ItemLista: React.FC = () => {
+type ItemListaProps = {
+  item: FavoritosGithubType | RepositoriosGithubType
+}
+
+const ItemLista: React.FC<ItemListaProps> = ({ item }) => {
   return (
     <Col className="mb-3" lg={3} md={4} sm={6} xs={12}>
       <Card>
-        <Card.Header as="h5">Nome do repositorio</Card.Header>
+        <Card.Header as="h5">{item.name}</Card.Header>
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
+          <Card.Title>{item.full_name}</Card.Title>
           <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
+            <ul>
+              <li>Numero de forks: {item.forks_count}</li>
+              <li>Numero de acompanhamentos: {item.watchers}</li>
+              <li>Numero de issues/questões abertas: {item.open_issues}</li>
+            </ul>
           </Card.Text>
-          <Button variant="primary">Link do repositrio</Button>
+          <p>Linguagem: {item.language}</p>
+          <a href={item.html_url} rel="noopener noreferrer" target="_blank">
+            <Button>Link do repositório</Button>
+          </a>
         </Card.Body>
       </Card>
     </Col>
