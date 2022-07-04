@@ -3,8 +3,6 @@ import Biografia from '../Components/Biografia'
 import BotaoAlterarVisualizacao from '../Components/BotaoAlterarVisualizacao'
 import Header from '../Components/Header'
 import Layout from '../Components/Layout'
-
-import ListaRepositorios from '../Components/ListaRepositorios'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -14,7 +12,6 @@ const Home: NextPage = () => {
         <Header />
         <Biografia />
         <BotaoAlterarVisualizacao />
-        <ListaRepositorios />
       </div>
     </Layout>
   )
