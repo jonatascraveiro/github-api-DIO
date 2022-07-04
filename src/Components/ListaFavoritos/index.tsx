@@ -1,15 +1,20 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
+import { FavoritosGithubType } from '../../types/favoritos'
 import ItemLista from '../ItemLista'
 
 import { Container } from './styles'
 
-const ListaFavoritos: React.FC = () => {
+type ListaFavoritosType = {
+  favoritos: FavoritosGithubType[]
+}
+
+const ListaFavoritos: React.FC<ListaFavoritosType> = ({ favoritos }) => {
   return (
     <Container>
       <Row>
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => {
-          return <ItemLista key={key} />
+        {favoritos.map((favorito) => {
+          return <ItemLista item={favorito} key={favorito.id} />
         })}
       </Row>
     </Container>
