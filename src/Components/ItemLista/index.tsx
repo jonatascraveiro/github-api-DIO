@@ -17,7 +17,7 @@ const ItemLista: React.FC<ItemListaProps> = ({ item }) => {
           <Card.Text>
             <ul>
               <li>Numero de forks: {item.forks_count}</li>
-              <li>Numero de acompanhamentos: {item.watchers}</li>
+              <li>Numero de acompanhamentos: {item.watchers_count}</li>
               <li>Numero de issues/questões abertas: {item.open_issues}</li>
             </ul>
           </Card.Text>
