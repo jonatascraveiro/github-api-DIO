@@ -5,8 +5,6 @@ import useGithub from '../../hooks/github-hooks'
 import ListaFavoritos from '../ListaFavoritos'
 import ListaRepositorios from '../ListaRepositorios'
 
-import { Container } from './styles'
-
 const BotaoAlterarVisualizacao: React.FC = () => {
   const { githubState, getUsuarioRepositorios, getUsuarioFavoritos } =
     useGithub()
@@ -22,7 +20,7 @@ const BotaoAlterarVisualizacao: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   return (
-    <Container className="m-3">
+    <div className="m-3">
       <Tabs>
         <TabList style={{ listStyleType: 'none' }} className="d-flex my-5 ps-0">
           <Tab>
@@ -43,7 +41,7 @@ const BotaoAlterarVisualizacao: React.FC = () => {
         </TabPanel>
       </Tabs>
       <Stack direction="horizontal" gap={5}></Stack>
-    </Container>
+    </div>
   )
 }
 

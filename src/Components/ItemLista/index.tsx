@@ -13,7 +13,9 @@ const ItemLista: React.FC<ItemListaProps> = ({ item }) => {
       <Card>
         <Card.Header as="h5">{item.name}</Card.Header>
         <Card.Body>
-          <Card.Title>{item.full_name}</Card.Title>
+          <Card.Title style={{ height: '2em' }} className="mb-4 text-start">
+            {item.full_name}
+          </Card.Title>
           <Card.Text>
             <ul>
               <li>Numero de forks: {item.forks_count}</li>
